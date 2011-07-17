@@ -1,4 +1,4 @@
-   vim 以UTF8的字符编码方式写的
+         vim 以UTF8的字符编码方式写的
 #github 的使用
 Global setup: #全局配置 强烈要求要做  规范操作
 
