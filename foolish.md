@@ -1,4 +1,4 @@
-            vim 以UTF8的字符编码方式写的
+vim 以UTF8的字符编码方式写的
 #github 的使用
 Global setup: #全局配置 强烈要求要做  规范操作
 
@@ -15,7 +15,7 @@ Next steps:
   touch README
   git add README
   git commit -m 'first commit'
-  git remote add origin git@github.com:perfectfoolish/foolish.git
+  git remote add origin git@github.com:perfectfoolish/foolish.git  添加远端远端门牌号
   git push -u origin master
       
 
