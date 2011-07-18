@@ -244,7 +244,7 @@ vim 以UTF8的字符编码方式写的
 
   git add README
 
-  git commit -m 'first commit'
+  git commit -a -m 'first commit'
 
   git remote add origin git@github.com:perfectfoolish/foolish.git  添加远端远端门牌号
 
