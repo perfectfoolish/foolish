@@ -8,7 +8,7 @@
 
                 y(ank)             gg+G
 
-   ## 删除类命令d的格式如下(Normal)：
+## 删除类命令d的格式如下(Normal)：
 
          [number]  command  object    or     command   [number]    object
    
@@ -20,7 +20,7 @@
         
         dd 删除光标所在的整行。
 
-   ## 撤消类命令
+## 撤消类命令
 
         u  撤消最后执行的命令。
 
