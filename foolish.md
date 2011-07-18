@@ -28,12 +28,19 @@
   
         CTRL R 执行恢复命令，即撤消掉以前的撤消命令，也就是恢复以前的操作结果。
 
-     
+        Shift ctrl t 打开新的bash
 
+        ctrl PgUp
+
+        ctrl PgDn
+
+## VISUAL LINE
+
+        Shift v   enter VISUAL LINE  [d(elete)  p(aste) ] PgUp PgDn select    
        
-
+        Shift v   exit  VISUAL LINE
          
-
+        整体缩进几行代码:
 # markdown
 
     http://happypeter.github.com/LGCB/book/toy_markdown.html
