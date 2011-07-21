@@ -4,9 +4,9 @@ https://github.com/happypeter
 
 https://github.com/wanggege
 
-# vim
+#vim
          
-    要粘贴必须进入插入模式,否则格式乱了 
+   * 要粘贴必须进入插入模式,否则格式乱了 
 
     Command = operator + number + motion
 
@@ -14,33 +14,36 @@ https://github.com/wanggege
 
                 y(ank)             gg+G
 
-## 删除类命令d的格式如下(Normal)：
+##删除类命令d的格式如下(Normal)：
 
          [number]  command  object    or     command   [number]    object
    
-        dw 从当前光标当前位置直到单字/单词末尾，包括空格。
+        dw 从当前光标当前位置直到单字/单词末尾，包括空格
 
-        de 从当前光标当前位置直到单字/单词末尾，但是不包括空格。
-
-        d$ 从当前光标当前位置直到当前行末尾。
+        de 从当前光标当前位置直到单字/单词末尾，但是不包括空格
+                                                  
+        d$ 从当前光标当前位置直到当前行末尾
         
-        dd 删除光标所在的整行。
+        dd 删除光标所在的整行 
 
-## 撤消类命令
+##撤消类命令
 
-        u  撤消最后执行的命令。
+        u  撤消最后执行的命令
 
-        U 撤消在一行中所做的改动即修正整行。
+        U 撤消在一行中所做的改动即修正整行
   
-        CTRL R 执行恢复命令，即撤消掉以前的撤消命令，也就是恢复以前的操作结果。
+        CTRL R 执行恢复命令，即撤消掉以前的撤消命令，也就是恢复以前的操作结果
+
+##其他类命令
 
         Shift ctrl t 打开新的bash
 
-        ctrl PgUp
+        ctrl PgUp  or  ctrl PgDn  切换打开的多个bash
+ 
+        
 
-        ctrl PgDn
 
-## VISUAL LINE
+##VISUAL LINE
 
         Shift v   enter VISUAL LINE  [d(elete)  p(aste) ] PgUp PgDn select    
        
