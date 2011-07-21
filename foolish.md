@@ -1,3 +1,9 @@
+#参考笔记
+
+https://github.com/happypeter
+
+https://github.com/wanggege
+
 # vim
          
     要粘贴必须进入插入模式,否则格式乱了 
