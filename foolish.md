@@ -41,11 +41,26 @@
         Shift v   exit  VISUAL LINE
          
         整体缩进几行代码:
+                        
+            首先用可视行模式选中这几行，然后 >  or  <
+
+##插件
+ 
+  snipmate
+
+     http://www.vim.org/scripts/script.php?script_id=2540
+
+     http://code.google.com/p/snipmate/issues/list
+
+     http://github.com/msanders/snipmate.vim
+   
+     http://www.vimer.cn/2010/04/vimgvim%E4%B8%AD%E5%AF%B9snipmate%E7%9A%84%E5%B0%8F%E5%A6%99%E7%94%A8.html
+ 
 # markdown
 
     http://happypeter.github.com/LGCB/book/toy_markdown.html
 
-### html study
+## html study
 
 http://www.w3schools.com/
 
