@@ -6,6 +6,8 @@ https://github.com/happypeter
 
 https://github.com/wanggege
 
+http://happypeter.org
+
 # vim
          
     lsb_release -a # examine system information
