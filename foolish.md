@@ -1,12 +1,16 @@
-#Reference notes ( 参考笔记 )
+# Reference video and notes ( 参考笔记 ) 
+
+http://media.happypeter.org/screencasts.html
 
 https://github.com/happypeter
 
 https://github.com/wanggege
 
-#vim
+# vim
          
-   * 要粘贴必须进入插入模式,否则格式乱了 
+    lsb_release -a # examine system information
+
+   * 要粘贴必须进入插入模式,否则格式乱了
 
     Command = operator + number + motion
 
@@ -14,7 +18,7 @@ https://github.com/wanggege
 
                 y(ank)             gg+G
 
-##删除类命令d的格式如下(Normal)：
+## 删除类命令d的格式如下(Normal)：
 
          [number]  command  object    or     command   [number]    object
    
@@ -26,7 +30,7 @@ https://github.com/wanggege
         
         dd 删除光标所在的整行 
 
-##撤消类命令
+## 撤消类命令
 
         u  撤消最后执行的命令
 
@@ -34,28 +38,36 @@ https://github.com/wanggege
   
         CTRL R 执行恢复命令，即撤消掉以前的撤消命令，也就是恢复以前的操作结果
 
-##其他类命令
+## 其他类命令
 
         Shift ctrl t 打开新的bash
 
         ctrl PgUp  or  ctrl PgDn  切换打开的多个bash
  
         
+## multiple files
+
+    :ls # see buffers
+
+    :bn # go to next buffer
+
+    :bp # go to previous buffer
+
+    :bd # delete a buffer
 
 
-##VISUAL LINE
+## VISUAL LINE
 
-        Shift v   enter VISUAL LINE  [d(elete)  p(aste) ] PgUp PgDn select    
-       
+        Shift v   enter VISUAL LINE  [d(elete)  p(aste) ] PgUp PgDn to select    
         Shift v   exit  VISUAL LINE
          
         整体缩进几行代码:
                         
             首先用可视行模式选中这几行，然后 >  or  <
 
-##插件
+## 插件
  
-  snipmate
+### snipmate
 
      http://www.vim.org/scripts/script.php?script_id=2540
 
@@ -65,6 +77,8 @@ https://github.com/wanggege
    
      http://www.vimer.cn/2010/04/vimgvim%E4%B8%AD%E5%AF%B9snipmate%E7%9A%84%E5%B0%8F%E5%A6%99%E7%94%A8.html
  
+
+
 # markdown
 
     http://happypeter.github.com/LGCB/book/toy_markdown.html
@@ -74,6 +88,7 @@ https://github.com/wanggege
 http://www.w3schools.com/
 
 # git
+
 ##clone others respository
 
    git clone + 链接(end with .tg)
@@ -81,10 +96,14 @@ http://www.w3schools.com/
 ## install
 
     sudo apt-get install git-core 
+
     sudo apt-get install tig
 
     git pull
+
 ## git basics
+
+
 
 1. first create a dir
 
