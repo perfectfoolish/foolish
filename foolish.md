@@ -20,7 +20,7 @@ pppoeconf
 
 ## SSH Login ( moreover ftp http )
 
-Client default install ssh-client  at the same time   Server : sudo apt-get install openssh-server (Installation Complete,Port automatically open)
+  Client default install ssh-client  at the same time   Server : sudo apt-get install openssh-server (Installation Complete,Port automatically open)
 
 eg: ssh peter@192.168.1.17
 
@@ -72,7 +72,7 @@ http://tldp.org/HOWTO/Program-Library-HOWTO/
 
         u  撤消最后执行的命令
 
-        U 撤消在一行中所做的改动即修正整行
+        U  撤消在一行中所做的改动即修正整行
   
         CTRL R 执行恢复命令，即撤消掉以前的撤消命令，也就是恢复以前的操作结果
 
@@ -99,13 +99,13 @@ http://tldp.org/HOWTO/Program-Library-HOWTO/
 
 ## multiple files
 
-    :ls # see buffers
+    :ls   see buffers
 
-    :bn # go to next buffer
+    :bn   go to next buffer
 
-    :bp # go to previous buffer
+    :bp   go to previous buffer
 
-    :bd # delete a buffer
+    :bd   delete a buffer
 
 
 ## VISUAL LINE
@@ -314,13 +314,13 @@ bash is a kind of shell.
 
     ls
 
-    cd    # ~ means your home dir
+    cd      ~ means your home dir
 
-    cd .. # go to the parent of current dir
+    cd ..   go to the parent of current dir
 
     pwd
 
-    man pwd  # q to quit
+    man pwd     q to quit
 
     mkdir dir
 
