@@ -6,7 +6,37 @@ https://github.com/happypeter
 
 https://github.com/wanggege
 
-http://happypeter.org
+http://happypeter.org 
+
+#Network Application
+
+ifconfig  View IP addresses
+
+sudo dhclient eth1  Connect to the Internet
+
+##SSH Login ( moreover ftp http )
+
+Client 默认上已经装了 ssh-client  at the same time   Server : sudo apt-get install openssh-server (Installation Complete,Port automatically open)
+
+eg: ssh peter@192.168.1.17
+
+    enter the password of peter
+
+    return Client (ctrl-d or exit)
+
+    scp (-r) peter@192.168.1.17:~/hihihi .   (-r use for dir)
+
+    sudo service ssh stop 
+
+    sudo service ssh start
+
+    sudo !!
+
+    sudo service ssh status
+     
+# C
+
+http://tldp.org/HOWTO/Program-Library-HOWTO/
 
 # vim
          
