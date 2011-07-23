@@ -14,6 +14,8 @@ ifconfig  View IP addresses
 
 sudo dhclient eth1  Connect to the Internet
 
+pppoeconf
+
 ##SSH Login ( moreover ftp http )
 
 Client 默认上已经装了 ssh-client  at the same time   Server : sudo apt-get install openssh-server (Installation Complete,Port automatically open)
