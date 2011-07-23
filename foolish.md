@@ -2,13 +2,15 @@
 
 http://media.happypeter.org/screencasts.html
 
+http://billie66.github.com/index.html
+
 https://github.com/happypeter
 
 https://github.com/wanggege
 
 http://happypeter.org 
 
-#Network Application
+# Network Application
 
 ifconfig  View IP addresses
 
@@ -16,9 +18,9 @@ sudo dhclient eth1  Connect to the Internet
 
 pppoeconf
 
-##SSH Login ( moreover ftp http )
+## SSH Login ( moreover ftp http )
 
-Client 默认上已经装了 ssh-client  at the same time   Server : sudo apt-get install openssh-server (Installation Complete,Port automatically open)
+Client default install ssh-client  at the same time   Server : sudo apt-get install openssh-server (Installation Complete,Port automatically open)
 
 eg: ssh peter@192.168.1.17
 
@@ -41,6 +43,8 @@ eg: ssh peter@192.168.1.17
 http://tldp.org/HOWTO/Program-Library-HOWTO/
 
 # vim
+
+    vim 以UTF8的字符编码方式写的
          
     lsb_release -a # examine system information
 
@@ -77,8 +81,22 @@ http://tldp.org/HOWTO/Program-Library-HOWTO/
         Shift ctrl t 打开新的bash
 
         ctrl PgUp  or  ctrl PgDn  切换打开的多个bash
- 
-        
+
+        ctrl-n use to complement a command,不仅是当前文件的内容而且包含的头文件的内容
+
+## open another bash in vim
+
+1.先保存文件即:w
+
+2.open bash :sh
+
+3.close bash = ctrl d
+
+4.退出vim  :q
+
+ 这种情况下可不关闭vim的情况下编译源程序，方便源程序的修改
+
+
 ## multiple files
 
     :ls # see buffers
@@ -99,23 +117,49 @@ http://tldp.org/HOWTO/Program-Library-HOWTO/
                         
             首先用可视行模式选中这几行，然后 >  or  <
 
+## Configuration files
+
+## .vimrc
+
+home下的创建本机的.vimrc（隐藏文件）文件，该文件是vim的配置文件
+
 ## 插件
  
-### snipmate
+## snipmate
 
-     http://www.vim.org/scripts/script.php?script_id=2540
+http://www.vim.org/scripts/script.php?script_id=2540
 
-     http://code.google.com/p/snipmate/issues/list
+http://code.google.com/p/snipmate/issues/list
 
-     http://github.com/msanders/snipmate.vim
+http://github.com/msanders/snipmate.vim
    
-     http://www.vimer.cn/2010/04/vimgvim%E4%B8%AD%E5%AF%B9snipmate%E7%9A%84%E5%B0%8F%E5%A6%99%E7%94%A8.html
+http://www.vimer.cn/2010/04/vimgvim%E4%B8%AD%E5%AF%B9snipmate%E7%9A%84%E5%B0%8F%E5%A6%99%E7%94%A8.html
  
-
-
 # markdown
 
-    http://happypeter.github.com/LGCB/book/toy_markdown.html
+http://happypeter.github.com/LGCB/book/toy_markdown.html
+
+## about markdown
+
+   markdown文本书写时一定要注意在内容行缩进和与标题之间的空行
+
+# markdown using
+
+## download and install markdown
+
+   1.sudo apt-get install markdown
+
+## creat my .md directory
+
+   2.vim my_note.md
+
+##change .md to .html
+
+   3.markdown my_note.md > my_note.html
+
+## open .html directory
+
+   4.firefox my_note.html&
 
 ## html study
 
@@ -123,21 +167,19 @@ http://www.w3schools.com/
 
 # git
 
-##clone others respository
-
-   git clone + 链接(end with .tg)
-
 ## install
 
-    sudo apt-get install git-core 
-
+    sudo apt-get install git-core
+    
     sudo apt-get install tig
 
     git pull
 
+##clone others respository
+
+   git clone + 链接(end with .tg)
+
 ## git basics
-
-
 
 1. first create a dir
 
@@ -178,31 +220,53 @@ http://www.w3schools.com/
 
 #github
 
- 1.login my github in github website   //https://github.com
+1.login my own github in github website   
 
- 
+https://github.com
 
-##about markdown
+http://www.happypeter.org/posts/21
 
-   markdown文本书写时一定要注意在内容行缩进和与标题之间的空行
+##Global setup: 全局配置 强烈要求要做  规范操作
 
-#markdown using
-##download and install markdown
+  Set up git
 
-   1.sudo apt-get install markdown
+  git config --global user.name "lifulei"  
 
-##creat my .md directory
+  git config --global user.email az00000000@126.com
+        
+##Next steps:
 
-   2.vim my_note.md
+  mkdir foolish
+  
+  cd foolish
 
-##change .md to .html
+  git init
 
-   3.markdown my_note.md > my_note.html
+  touch README
 
-##open .html directory
+  git add README
 
-   4.firefox my_note.html&
+  git commit -a -m 'first commit'
 
+  git remote add origin git@github.com:perfectfoolish/foolish.git  添加远端远端门牌号
+
+  git push -u origin master
+      
+##Existing Git Repo?
+
+  cd existing_git_repo
+
+  git remote add origin git@github.com:perfectfoolish/foolish.git
+
+  git push -u origin master
+      
+##Importing a Subversion Repo?
+
+  Click here
+      
+##When youre done:
+
+  Continue
 
 ## ref
 
@@ -213,6 +277,7 @@ video: search "linus git" at youku.com
 # linux basics
 
 Linux is OS(operating system)
+
 OS as linus see it:
 
 OS is nothing but the kernel.
@@ -224,7 +289,10 @@ ubuntu is Linux + 1000 app.
 OS as MS see it:
 
 OS is kernel + desktop env.
+
 # tips
+
+   date
 
    Clear screen : Ctrl-l
 
@@ -246,30 +314,31 @@ bash is a kind of shell.
 
     ls
 
-    cd 
-    # ~ means your home dir
+    cd    # ~ means your home dir
+
     cd .. # go to the parent of current dir
 
     pwd
 
-    man pwd # q to quit
+    man pwd  # q to quit
 
     mkdir dir
 
 ### path
 
     绝对路径: start with /
+
     相对路径: start with .
 
 ## shell prompt
 
     peter@cow:~/tg-note$
+
     user@machinename:currentWorkingDirectory(folder)$
 
 # software installation
 
     sudo apt-get install tree
-
 
 # tar 
 
@@ -289,61 +358,4 @@ http://www.linfo.org/
 http://www.wikipedia.org/
 
 http://news.ycombinator.com/news
-#vim
-Command = operator + number + motion
-       
-            d(elete)  1,2..   
-    
-            y(ank)            gg+G
-   
-
-
-
-
-vim 以UTF8的字符编码方式写的
-#github 的使用
-##Global setup: 全局配置 强烈要求要做  规范操作
-
- Set up git
-  git config --global user.name "lifulei"  
-  git config --global user.email az00000000@126.com
-        
-
-##Next steps:
-
-  mkdir foolish
-  
-  cd foolish
-
-  git init
-
-  touch README
-
-  git add README
-
-  git commit -a -m 'first commit'
-
-  git remote add origin git@github.com:perfectfoolish/foolish.git  添加远端远端门牌号
-
-  git push -u origin master
-      
-
-##Existing Git Repo?
-
-  cd existing_git_repo
-
-  git remote add origin git@github.com:perfectfoolish/foolish.git
-
-  git push -u origin master
-      
-
-##Importing a Subversion Repo?
-
-  Click here
-      
-
-##When youre done:
-
-  Continue
-
 
