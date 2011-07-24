@@ -14,9 +14,9 @@ http://happypeter.org
 
 ifconfig  View IP addresses
 
-sudo dhclient eth1  Connect to the Internet
+sudo dhclient eth1   Connect to the Internet
 
-pppoeconf
+sudo pppoeconf
 
 ## SSH Login ( moreover ftp http )
 
@@ -62,7 +62,7 @@ http://jonas.nitro.dk/tig/
 
 ## 删除类命令d的格式如下(Normal)：
 
-         [number]  command  object    or     command   [number]    object
+        [number]  command  object    or     command   [number]    object
    
         dw 从当前光标当前位置直到单字/单词末尾，包括空格
 
@@ -92,9 +92,11 @@ http://jonas.nitro.dk/tig/
          
         Esc-:wq   quit after save
 
+        file filename or dir  view properties of file and dir
+
 ## open another bash in vim
 
-1.先保存文件即:w
+1.先保存文件 :w
 
 2.open bash :sh
 
@@ -243,7 +245,7 @@ http://www.w3schools.com/
 
 #github
 
-1.login my own github in github website   
+login my own github in github website   
 
 https://github.com
 
