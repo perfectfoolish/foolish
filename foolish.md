@@ -82,7 +82,11 @@ http://tldp.org/HOWTO/Program-Library-HOWTO/
 
         ctrl PgUp  or  ctrl PgDn  切换打开的多个bash
 
-        ctrl-n use to complement a command,不仅是当前文件的内容而且包含的头文件的内容
+        ctrl-n  In insert mode,use to complement all the string,当前文件的内容和头文件的内容
+
+        shift-zz  
+         
+        Esc-:wq   quit after save
 
 ## open another bash in vim
 
@@ -95,6 +99,7 @@ http://tldp.org/HOWTO/Program-Library-HOWTO/
 4.退出vim  :q
 
  这种情况下可不关闭vim的情况下编译源程序，方便源程序的修改
+
 
 
 ## multiple files
@@ -123,7 +128,11 @@ http://tldp.org/HOWTO/Program-Library-HOWTO/
 
 home下的创建本机的.vimrc（隐藏文件）文件，该文件是vim的配置文件
 
-## 插件
+## .bashrc
+
+
+
+## 插件(安装vim插件的实质：用命令行把插件安装在home下的.vim中，即~/.vim)
  
 ## snipmate
 
@@ -135,6 +144,12 @@ http://github.com/msanders/snipmate.vim
    
 http://www.vimer.cn/2010/04/vimgvim%E4%B8%AD%E5%AF%B9snipmate%E7%9A%84%E5%B0%8F%E5%A6%99%E7%94%A8.html
  
+cd .vim
+
+cd snippets
+
+vim c.snippets
+
 # markdown
 
 http://happypeter.github.com/LGCB/book/toy_markdown.html
