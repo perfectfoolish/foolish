@@ -42,6 +42,8 @@ eg: ssh peter@192.168.1.17
 
 http://tldp.org/HOWTO/Program-Library-HOWTO/
 
+http://jonas.nitro.dk/tig/
+
 # vim
 
     vim 以UTF8的字符编码方式写的
