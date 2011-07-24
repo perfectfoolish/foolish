@@ -134,6 +134,26 @@ http://jonas.nitro.dk/tig/
 
 home下的创建本机的.vimrc（隐藏文件）文件，该文件是vim的配置文件
 
+map ,ss :set spell<cr>   key map 单词拼写检查
+
+map <tab> :bn<cr>        切换同时打开的多个buffer
+
+imap JJ <esc>
+
+imap jj <esc>            从插入模式退出到普通模式
+
+set hidden               隐藏：bn转换的报错信息
+
+set autoindent           设置自动缩进
+
+set expandtab            设置<Tab>的作用 展开成空格
+
+set tabstop=4            设置<Tab>的作用 展开成4个空格
+
+set shiftwidth=4         shift-v + > 时候展开成空格的个数
+
+set dictionary=/usr/share/dict/words    添加系统自带的字典
+
 ## .bashrc
 
 
