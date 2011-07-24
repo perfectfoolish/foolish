@@ -22,7 +22,9 @@ pppoeconf
 
   Client default install ssh-client  at the same time   Server : sudo apt-get install openssh-server (Installation Complete,Port automatically open)
 
-eg: ssh peter@192.168.1.17
+eg: 
+    
+    ssh peter@192.168.1.17
 
     enter the password of peter
 
@@ -36,7 +38,7 @@ eg: ssh peter@192.168.1.17
 
     sudo !!
 
-    sudo service ssh status
+    service ssh status
      
 # C
 
