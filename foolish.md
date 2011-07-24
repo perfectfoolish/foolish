@@ -329,7 +329,22 @@ http://dict.youdao.com/
 
 # shell ( shell is a commandline interpreter)
 
-bash is a kind of shell. 
+bash is a kind of shell.
+
+## Where are you ?
+
+   which ls
+
+   locate vimrc
+   sudo updatedb
+
+   find xxx|grep git
+
+   ps aux | grep firefox  (找出Firefox的进程)
+
+   kill 2003   (2003代表进程号)
+
+   kill -9 2003  (强行关闭进程)
 
 ## filesystem tree
 
