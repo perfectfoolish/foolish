@@ -134,6 +134,10 @@ home下的创建本机的.vimrc（隐藏文件）文件，该文件是vim的配�
 
 
 
+## .gitconfig
+
+
+
 ## 插件(安装vim插件的实质：用命令行把插件安装在home下的.vim中，即~/.vim)
  
 ## snipmate
