@@ -98,6 +98,8 @@ hen of Peter
 
         file filename or dir  view properties of file and dir
 
+        :number   光标快速跳转到此行
+
 ## open another bash in vim
 
 1.先保存文件 :w
@@ -152,9 +154,9 @@ set hidden               隐藏：bn转换的报错信息
 
 set autoindent           设置自动缩进
 
-set expandtab            设置<Tab>的作用 展开成空格
+set expandtab            设置`<Tab>`的作用 展开成空格
 
-set tabstop=4            设置<Tab>的作用 展开成4个空格
+set tabstop=4            设置`<Tab>`的作用 展开成4个空格
 
 set shiftwidth=4         shift-v + > 时候展开成空格的个数
 
