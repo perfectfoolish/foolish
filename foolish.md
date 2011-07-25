@@ -12,11 +12,11 @@ http://happypeter.org
 
 # Network Application
 
-ifconfig  View IP addresses
+ifconfig                View IP addresses
 
-sudo dhclient eth1   Connect to the Internet
+sudo dhclient eth1      Connect to the Internet
 
-sudo pppoeconf
+sudo pppoeconf          Dialup Internet Connection
 
 ## SSH Login ( moreover ftp http )
 
@@ -46,11 +46,13 @@ http://tldp.org/HOWTO/Program-Library-HOWTO/
 
 http://jonas.nitro.dk/tig/
 
+hen of Peter
+
 # vim
 
     vim 以UTF8的字符编码方式写的
          
-    lsb_release -a # examine system information
+    lsb_release -a       examine system information
 
    * 要粘贴必须进入插入模式,否则格式乱了
 
@@ -134,6 +136,8 @@ http://jonas.nitro.dk/tig/
 
 home下的创建本机的.vimrc（隐藏文件）文件，该文件是vim的配置文件
 
+map 用来将指令映射成简单操作或设置自己想要的快捷键
+
 map ,ss :set spell<cr>   key map 单词拼写检查
 
 map <tab> :bn<cr>        切换同时打开的多个buffer
@@ -153,6 +157,10 @@ set tabstop=4            设置<Tab>的作用 展开成4个空格
 set shiftwidth=4         shift-v + > 时候展开成空格的个数
 
 set dictionary=/usr/share/dict/words    添加系统自带的字典
+
+i_ctrl-x-f               补齐路径
+
+
 
 ## .bashrc
 
