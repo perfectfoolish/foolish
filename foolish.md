@@ -90,6 +90,8 @@ hen of Peter
 
         ctrl-n  In insert mode,use to complement all the string,当前文件的内容和头文件的内容
 
+        i_ctrl-x-f     补齐路径
+
         shift-zz  
          
         Esc-:wq   quit after save
@@ -157,10 +159,6 @@ set tabstop=4            设置<Tab>的作用 展开成4个空格
 set shiftwidth=4         shift-v + > 时候展开成空格的个数
 
 set dictionary=/usr/share/dict/words    添加系统自带的字典
-
-i_ctrl-x-f               补齐路径
-
-
 
 ## .bashrc
 
