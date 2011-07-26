@@ -160,7 +160,7 @@ map <tab> :bn<cr>        切换同时打开的多个buffer
 
 imap JJ <esc>
 
-imap jj <esc>            从插入模式退出到普通模式
+imap jj <esc>                   从插入模式退出到普通模式
 
 set hidden               隐藏：bn转换的报错信息
 
