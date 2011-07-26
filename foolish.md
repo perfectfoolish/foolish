@@ -349,7 +349,7 @@ https://github.com/happypeter/job-akae/wiki
 
 http://dict.youdao.com/
 
-# shell ( shell is a commandline interpreter)
+# shell ( shell is a commandline interpreter )
 
 bash is a kind of shell.
 
@@ -408,6 +408,9 @@ http://happypeter.github.com/LGCB/
 
 http://billie66.github.com/TLCL/book/
 
+# reading
+
+http://norvig.com/21-days.html
 
 ## some of my favorite sites
 
