@@ -54,7 +54,9 @@ hen of Peter
 
     echo  use printing value
 
-    make 
+    make  执行成功的前提是当前文件夹中有makefile文件
+
+
 
 # vim
 
