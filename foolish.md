@@ -39,6 +39,10 @@ eg:
     sudo !!
 
     service ssh status
+
+## rsync
+
+
      
 # C
 
@@ -47,6 +51,10 @@ http://tldp.org/HOWTO/Program-Library-HOWTO/
 http://jonas.nitro.dk/tig/
 
 hen of Peter
+
+    echo  use printing value
+
+    make 
 
 # vim
 
@@ -222,6 +230,14 @@ http://happypeter.github.com/LGCB/book/toy_markdown.html
 
 http://www.w3schools.com/
 
+
+# github
+
+login my own github in github website   
+
+https://github.com
+
+http://www.happypeter.org/posts/21
 # git
 
 ## install
@@ -230,13 +246,25 @@ http://www.w3schools.com/
     
     sudo apt-get install tig
 
-    git pull
+    sudo apt-get install gource        跳转到一个项目内运行gource   
 
 ##clone others respository
 
    git clone + 链接(end with .tg)
 
+   git pull
+
 ## git basics
+
+## Global setup: 全局配置 强烈要求要做  规范操作
+
+  Set up git
+
+  git config --global user.name "lifulei"  
+
+  git config --global user.email az00000000@126.com
+        
+Next steps:
 
 1. first create a dir
 
@@ -264,66 +292,24 @@ http://www.w3schools.com/
 
 6. create the first version
 
-        git commit -a -m "my first version"   //-a跟踪所有修改-m修改信息，说明性内容，说明为什么修改等
+        git commit -a -m "my first commit"   //-a跟踪所有修改-m修改信息，说明性内容，说明为什么修改等
 
 7. 上传新版本到仓库
-   
-        git remote add origin git@github.com:wanggege/my_note.git //给链接起别名
 
-        git push -u origin master        //master是仓库的以部分
+        git remote add origin git@github.com:perfectfoolish/foolish.git  添加远端远端>门牌号,给链接起别名
 
-8.小结
-        每次修改完都要重复执行6
+        git push -u origin master        master是仓库的以部分
 
-#github
+8.每次修改完都要重复执行6
 
-login my own github in github website   
 
-https://github.com
-
-http://www.happypeter.org/posts/21
-
-##Global setup: 全局配置 强烈要求要做  规范操作
-
-  Set up git
-
-  git config --global user.name "lifulei"  
-
-  git config --global user.email az00000000@126.com
-        
-##Next steps:
-
-  mkdir foolish
-  
-  cd foolish
-
-  git init
-
-  touch README
-
-  git add README
-
-  git commit -a -m 'first commit'
-
-  git remote add origin git@github.com:perfectfoolish/foolish.git  添加远端远端门牌号
-
-  git push -u origin master
-      
-##Existing Git Repo?
+9.Existing Git Repo
 
   cd existing_git_repo
 
   git remote add origin git@github.com:perfectfoolish/foolish.git
 
   git push -u origin master
-      
-##Importing a Subversion Repo?
-
-  Click here
-      
-##When youre done:
-
-  Continue
 
 ## ref
 
