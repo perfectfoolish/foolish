@@ -368,6 +368,10 @@ bash is a kind of shell.
 
    kill -9 2003  (强行关闭进程)
 
+find a string in a project
+
+https://github.com/happypeter/hen/blob/master/search/curse/xxx.c
+
 ## filesystem tree
 
     ls
