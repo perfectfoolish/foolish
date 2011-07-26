@@ -104,6 +104,8 @@ http://www.derekwyatt.org/vim/vim-tutorial-videos/vim-novice-tutorial-videos/
 
         i_ctrl-x-f     补齐路径
 
+        i_ctrl-x-k     
+
         shift-zz  
          
         Esc-:wq   quit after save
@@ -146,6 +148,12 @@ http://www.derekwyatt.org/vim/vim-tutorial-videos/vim-novice-tutorial-videos/
                         
             首先用可视行模式选中这几行，然后 >  or  <
 
+##the reason why .swap file appearing
+
+1. open the same file twice sametime
+
+2. close the file unnormal
+
 ## Configuration files
 
 ## .vimrc
@@ -160,7 +168,7 @@ map <tab> :bn<cr>        切换同时打开的多个buffer
 
 imap JJ <esc>
 
-imap jj <esc>                   从插入模式退出到普通模式
+imap jj <esc>            从插入模式退出到普通模式
 
 set hidden               隐藏：bn转换的报错信息
 
@@ -182,7 +190,9 @@ set dictionary=/usr/share/dict/words    添加系统自带的字典
 
 
 
-## 插件(安装vim插件的实质：用命令行把插件安装在home下的.vim中，即~/.vim)
+# plugin 
+
+(安装vim插件的实质：用命令行把插件安装在home下的.vim中，即~/.vim)
  
 ## snipmate
 
@@ -358,7 +368,7 @@ bash is a kind of shell.
    which ls
 
    locate vimrc
-   sudo updatedb
+   sudo updatedb   update locate
 
    find xxx|grep git
 
@@ -385,6 +395,10 @@ https://github.com/happypeter/hen/blob/master/search/curse/xxx.c
     man pwd     q to quit
 
     mkdir dir
+
+    cp   copy file
+    
+    cp -r directory   递归复制目录
 
 ### path
 
