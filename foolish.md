@@ -50,6 +50,10 @@ hen of Peter
 
 # vim
 
+## video
+
+http://www.derekwyatt.org/vim/vim-tutorial-videos/vim-novice-tutorial-videos/
+
     vim 以UTF8的字符编码方式写的
          
     lsb_release -a       examine system information
