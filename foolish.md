@@ -1,7 +1,5 @@
 # Reference video and notes ( 参考笔记 ) 
 
-http://media.happypeter.org/screencasts.html
-
 http://billie66.github.com/index.html
 
 https://github.com/happypeter
