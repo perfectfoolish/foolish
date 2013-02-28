@@ -1,0 +1,361 @@
+[BEGIN] 2013/2/26 10:55:30
+fdisk -l
+
+Disk /dev/xvda: 21.5 GB, 21474836480 bytes
+255 heads, 63 sectors/track, 2610 cylinders, total 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0002bfb2
+
+    Device Boot      Start         End      Blocks   Id  System
+/dev/xvda1   *        2048    41940991    20969472   83  Linux
+
+Disk /dev/xvdb: 783.8 GB, 783831531520 bytes
+255 heads, 63 sectors/track, 95295 cylinders, total 1530920960 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+
+Disk /dev/xvdb doesn't contain a valid partition table
+root@AY121202083149f581873:~# ls /dev/xvd*
+/dev/xvda  /dev/xvda1  /dev/xvdb
+root@AY121202083149f581873:~# fdisk /dev/xvd
+xvda   xvda1  xvdb   
+root@AY121202083149f581873:~# fdisk /dev/xvd
+xvda   xvda1  xvdb   
+root@AY121202083149f581873:~# fdisk /dev/xvdb
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0xfb24bce6.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): o
+Building a new DOS disklabel with disk identifier 0x86810ae9.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+root@AY121202083149f581873:~# fdisk -l
+
+Disk /dev/xvda: 21.5 GB, 21474836480 bytes
+255 heads, 63 sectors/track, 2610 cylinders, total 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0002bfb2
+
+    Device Boot      Start         End      Blocks   Id  System
+/dev/xvda1   *        2048    41940991    20969472   83  Linux
+
+Disk /dev/xvdb: 783.8 GB, 783831531520 bytes
+255 heads, 63 sectors/track, 95295 cylinders, total 1530920960 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x86810ae9
+
+    Device Boot      Start         End      Blocks   Id  System
+root@AY121202083149f581873:~# mkfs.ext4 /dev/xvdb 
+mke2fs 1.42 (29-Nov-2011)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+47841280 inodes, 191365120 blocks
+9568256 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=4294967296
+5840 block groups
+32768 blocks per group, 32768 fragments per group
+8192 inodes per group
+Superblock backups stored on blocks: 
+	32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208, 
+	4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968, 
+	102400000
+
+Allocating group tables: done                            
+Writing inode tables: done                            
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+
+root@AY121202083149f581873:~# fdisk -l
+
+Disk /dev/xvda: 21.5 GB, 21474836480 bytes
+255 heads, 63 sectors/track, 2610 cylinders, total 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0002bfb2
+
+    Device Boot      Start         End      Blocks   Id  System
+/dev/xvda1   *        2048    41940991    20969472   83  Linux
+
+Disk /dev/xvdb: 783.8 GB, 783831531520 bytes
+255 heads, 63 sectors/track, 95295 cylinders, total 1530920960 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+
+Disk /dev/xvdb doesn't contain a valid partition table
+root@AY121202083149f581873:~# cd /mnt/
+root@AY121202083149f581873:/mnt# ls
+root@AY121202083149f581873:/mnt# mkdir test
+root@AY121202083149f581873:/mnt# mount /dev/xvdb /mnt/test/
+root@AY121202083149f581873:/mnt# cd test/
+root@AY121202083149f581873:/mnt/test# ls
+lost+found
+root@AY121202083149f581873:/mnt/test# fdisk -l
+
+Disk /dev/xvda: 21.5 GB, 21474836480 bytes
+255 heads, 63 sectors/track, 2610 cylinders, total 41943040 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0002bfb2
+
+    Device Boot      Start         End      Blocks   Id  System
+/dev/xvda1   *        2048    41940991    20969472   83  Linux
+
+Disk /dev/xvdb: 783.8 GB, 783831531520 bytes
+255 heads, 63 sectors/track, 95295 cylinders, total 1530920960 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x00000000
+
+Disk /dev/xvdb doesn't contain a valid partition table
+root@AY121202083149f581873:/mnt/test# fdisk /dev/xvdb 
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0xbc1ababc.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): p
+
+Disk /dev/xvdb: 783.8 GB, 783831531520 bytes
+255 heads, 63 sectors/track, 95295 cylinders, total 1530920960 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0xbc1ababc
+
+    Device Boot      Start         End      Blocks   Id  System
+
+Command (m for help): q
+
+root@AY121202083149f581873:/mnt/test# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1       20G  2.4G   17G  13% /
+udev            3.9G  4.0K  3.9G   1% /dev
+tmpfs           1.6G  276K  1.6G   1% /run
+none            5.0M     0  5.0M   0% /run/lock
+none            3.8G     0  3.8G   0% /run/shm
+/dev/xvdb       730G   11G  682G   2% /mnt/test
+root@AY121202083149f581873:/mnt/test# umount /mnt/test 
+umount: /mnt/test: device is busy.
+        (In some cases useful info about processes that use
+         the device is found by lsof(8) or fuser(1))
+root@AY121202083149f581873:/mnt/test# cd ..
+root@AY121202083149f581873:/mnt# umount /mnt/test 
+root@AY121202083149f581873:/mnt# cd ..
+root@AY121202083149f581873:/# ls
+bin  boot  dev  etc  home  initrd.img  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  selinux  srv  sys  tmp  usr  var  vmlinuz
+root@AY121202083149f581873:/# ll
+total 88
+drwxr-xr-x  23 root root  4096 Feb 25 23:39 ./
+drwxr-xr-x  23 root root  4096 Feb 25 23:39 ../
+drwxr-xr-x   2 root root  4096 Feb 25 15:52 bin/
+drwxr-xr-x   3 root root  4096 Feb 25 15:57 boot/
+drwxr-xr-x  14 root root  4000 Feb 25 15:53 dev/
+drwxr-xr-x  85 root root  4096 Feb 26 11:05 etc/
+drwxr-xr-x   4 root root  4096 Feb 26 11:03 home/
+lrwxrwxrwx   1 root root    33 Aug 14  2012 initrd.img -> /boot/initrd.img-3.2.0-29-generic
+drwxr-xr-x  18 root root  4096 Feb 25 16:07 lib/
+drwxr-xr-x   2 root root  4096 Feb 25 15:49 lib64/
+drwx------   2 root root 16384 Aug  6  2012 lost+found/
+drwxr-xr-x   3 root root  4096 Aug  6  2012 media/
+drwxr-xr-x   3 root root  4096 Feb 26 11:02 mnt/
+drwxr-xr-x   2 root root  4096 Aug  6  2012 opt/
+dr-xr-xr-x 114 root root     0 Feb 25 23:40 proc/
+drwx------   5 root root  4096 Feb 25 18:55 root/
+drwxr-xr-x  16 root root   580 Feb 26 10:53 run/
+drwxr-xr-x   2 root root  4096 Feb 25 15:52 sbin/
+drwxr-xr-x   2 root root  4096 Mar  6  2012 selinux/
+drwxr-xr-x   2 root root  4096 Aug  6  2012 srv/
+drwxr-xr-x  13 root root     0 Feb 25 23:40 sys/
+drwxrwxrwt   3 root root  4096 Feb 26 11:06 tmp/
+drwxr-xr-x  10 root root  4096 Aug  6  2012 usr/
+drwxr-xr-x  11 root root  4096 Aug 24  2012 var/
+lrwxrwxrwx   1 root root    29 Aug 14  2012 vmlinuz -> boot/vmlinuz-3.2.0-29-generic
+root@AY121202083149f581873:/# cd home/
+root@AY121202083149f581873:/home# ll\
+> ^C
+root@AY121202083149f581873:/home# ll
+total 16
+drwxr-xr-x  4 root root 4096 Feb 26 11:03 ./
+drwxr-xr-x 23 root root 4096 Feb 25 23:39 ../
+drwxr-xr-x  8 git  git  4096 Feb 26 09:50 git/
+drwxr-xr-x  3 root root 4096 Feb 26 11:04 opensshdb/
+root@AY121202083149f581873:/home# ll
+total 16
+drwxr-xr-x  4 root root 4096 Feb 26 11:03 ./
+drwxr-xr-x 23 root root 4096 Feb 25 23:39 ../
+drwxr-xr-x  8 git  git  4096 Feb 26 09:50 git/
+drwxr-xr-x  3 root root 4096 Feb 26 11:04 opensshdb/
+root@AY121202083149f581873:/home# cd ..
+root@AY121202083149f581873:/# ll
+total 88
+drwxr-xr-x  23 root root  4096 Feb 25 23:39 ./
+drwxr-xr-x  23 root root  4096 Feb 25 23:39 ../
+drwxr-xr-x   2 root root  4096 Feb 25 15:52 bin/
+drwxr-xr-x   3 root root  4096 Feb 25 15:57 boot/
+drwxr-xr-x  14 root root  4000 Feb 25 15:53 dev/
+drwxr-xr-x  85 root root  4096 Feb 26 11:05 etc/
+drwxr-xr-x   4 root root  4096 Feb 26 11:03 home/
+lrwxrwxrwx   1 root root    33 Aug 14  2012 initrd.img -> /boot/initrd.img-3.2.0-29-generic
+drwxr-xr-x  18 root root  4096 Feb 25 16:07 lib/
+drwxr-xr-x   2 root root  4096 Feb 25 15:49 lib64/
+drwx------   2 root root 16384 Aug  6  2012 lost+found/
+drwxr-xr-x   3 root root  4096 Aug  6  2012 media/
+drwxr-xr-x   3 root root  4096 Feb 26 11:02 mnt/
+drwxr-xr-x   2 root root  4096 Aug  6  2012 opt/
+dr-xr-xr-x 114 root root     0 Feb 25 23:40 proc/
+drwx------   5 root root  4096 Feb 25 18:55 root/
+drwxr-xr-x  16 root root   580 Feb 26 10:53 run/
+drwxr-xr-x   2 root root  4096 Feb 25 15:52 sbin/
+drwxr-xr-x   2 root root  4096 Mar  6  2012 selinux/
+drwxr-xr-x   2 root root  4096 Aug  6  2012 srv/
+drwxr-xr-x  13 root root     0 Feb 25 23:40 sys/
+drwxrwxrwt   3 root root  4096 Feb 26 11:06 tmp/
+drwxr-xr-x  10 root root  4096 Aug  6  2012 usr/
+drwxr-xr-x  11 root root  4096 Aug 24  2012 var/
+lrwxrwxrwx   1 root root    29 Aug 14  2012 vmlinuz -> boot/vmlinuz-3.2.0-29-generic
+root@AY121202083149f581873:/# mv var/ var1
+root@AY121202083149f581873:/# ll
+total 88
+drwxr-xr-x  23 root root  4096 Feb 26 11:06 ./
+drwxr-xr-x  23 root root  4096 Feb 26 11:06 ../
+drwxr-xr-x   2 root root  4096 Feb 25 15:52 bin/
+drwxr-xr-x   3 root root  4096 Feb 25 15:57 boot/
+drwxr-xr-x  14 root root  4000 Feb 25 15:53 dev/
+drwxr-xr-x  85 root root  4096 Feb 26 11:05 etc/
+drwxr-xr-x   4 root root  4096 Feb 26 11:03 home/
+lrwxrwxrwx   1 root root    33 Aug 14  2012 initrd.img -> /boot/initrd.img-3.2.0-29-generic
+drwxr-xr-x  18 root root  4096 Feb 25 16:07 lib/
+drwxr-xr-x   2 root root  4096 Feb 25 15:49 lib64/
+drwx------   2 root root 16384 Aug  6  2012 lost+found/
+drwxr-xr-x   3 root root  4096 Aug  6  2012 media/
+drwxr-xr-x   3 root root  4096 Feb 26 11:02 mnt/
+drwxr-xr-x   2 root root  4096 Aug  6  2012 opt/
+dr-xr-xr-x 118 root root     0 Feb 25 23:40 proc/
+drwx------   5 root root  4096 Feb 26 11:06 root/
+drwxr-xr-x  16 root root   580 Feb 26 10:53 run/
+drwxr-xr-x   2 root root  4096 Feb 25 15:52 sbin/
+drwxr-xr-x   2 root root  4096 Mar  6  2012 selinux/
+drwxr-xr-x   2 root root  4096 Aug  6  2012 srv/
+drwxr-xr-x  13 root root     0 Feb 25 23:40 sys/
+drwxrwxrwt   3 root root  4096 Feb 26 11:07 tmp/
+drwxr-xr-x  10 root root  4096 Aug  6  2012 usr/
+drwxr-xr-x  11 root root  4096 Aug 24  2012 var1/
+lrwxrwxrwx   1 root root    29 Aug 14  2012 vmlinuz -> boot/vmlinuz-3.2.0-29-generic
+root@AY121202083149f581873:/# mv var1/var
+mv: missing destination file operand after `var1/var'
+Try `mv --help' for more information.
+root@AY121202083149f581873:/# mv var1 
+root@AY121202083149f581873:/# ll
+total 88
+drwxr-xr-x  23 root root  4096 Feb 26 11:07 ./
+drwxr-xr-x  23 root root  4096 Feb 26 11:07 ../
+drwxr-xr-x   2 root root  4096 Feb 25 15:52 bin/
+drwxr-xr-x   3 root root  4096 Feb 25 15:57 boot/
+drwxr-xr-x  14 root root  4000 Feb 25 15:53 dev/
+drwxr-xr-x  85 root root  4096 Feb 26 11:05 etc/
+drwxr-xr-x   4 root root  4096 Feb 26 11:03 home/
+lrwxrwxrwx   1 root root    33 Aug 14  2012 initrd.img -> /boot/initrd.img-3.2.0-29-generic
+drwxr-xr-x  18 root root  4096 Feb 25 16:07 lib/
+drwxr-xr-x   2 root root  4096 Feb 25 15:49 lib64/
+drwx------   2 root root 16384 Aug  6  2012 lost+found/
+drwxr-xr-x   3 root root  4096 Aug  6  2012 media/
+drwxr-xr-x   3 root root  4096 Feb 26 11:02 mnt/
+drwxr-xr-x   2 root root  4096 Aug  6  2012 opt/
+dr-xr-xr-x 113 root root     0 Feb 25 23:40 proc/
+drwx------   5 root root  4096 Feb 26 11:06 root/
+drwxr-xr-x  16 root root   580 Feb 26 10:53 run/
+drwxr-xr-x   2 root root  4096 Feb 25 15:52 sbin/
+drwxr-xr-x   2 root root  4096 Mar  6  2012 selinux/
+drwxr-xr-x   2 root root  4096 Aug  6  2012 srv/
+drwxr-xr-x  13 root root     0 Feb 25 23:40 sys/
+drwxrwxrwt   3 root root  4096 Feb 26 11:07 tmp/
+drwxr-xr-x  10 root root  4096 Aug  6  2012 usr/
+drwxr-xr-x  11 root root  4096 Aug 24  2012 var/
+lrwxrwxrwx   1 root root    29 Aug 14  2012 vmlinuz -> boot/vmlinuz-3.2.0-29-generic
+root@AY121202083149f581873:/# cd var/
+root@AY121202083149f581873:/var# ll
+total 44
+drwxr-xr-x 11 root root  4096 Aug 24  2012 ./
+drwxr-xr-x 23 root root  4096 Feb 26 11:07 ../
+drwxr-xr-x  2 root root  4096 Feb 26 06:25 backups/
+drwxr-xr-x  8 root root  4096 Feb 25 16:06 cache/
+drwxr-xr-x 37 root root  4096 Feb 25 18:48 lib/
+drwxrwsr-x  2 root staff 4096 Apr 19  2012 local/
+lrwxrwxrwx  1 root root     9 Aug  6  2012 lock -> /run/lock/
+drwxr-xr-x 13 root root  4096 Feb 25 18:48 log/
+drwxrwsr-x  2 root mail  4096 Aug  6  2012 mail/
+drwxr-xr-x  2 root root  4096 Aug  6  2012 opt/
+lrwxrwxrwx  1 root root     4 Aug 24  2012 run -> /run/
+drwxr-xr-x  6 root root  4096 Feb 25 16:06 spool/
+drwxrwxrwt  2 root root  4096 Apr 19  2012 tmp/
+root@AY121202083149f581873:/var# 
+[END] 2013/2/26 11:13:38

@@ -1,0 +1,1117 @@
+
+知识管理：网博士，有道笔记
+
+学习是个人成长的过程，在这个过程中是重要的是思考，让知识结构化，系统化，为应用，创新打下基础。
+
+学习方法：
+	枪挑一条线，棍一大片：
+		程序员分两类：一种是学过C语言的，一种是没有学过C语言的
+	读书由薄到厚，再由厚到薄
+		行业经典（Jolt), cheatsheet refcard
+	网络是最好的老师
+		八格亚路（baidu,google,yahoo,bing...)
+		blog,weibo,twitter,facebook
+		公开课
+	理论与实践：理论上理论都是正确的，实际上并不是
+		写代码，读代码
+		sourceforge,google code, github...
+
+
+
+OO：
+    DRY(Don't Repeat Yourself)
+		单一知识点
+
+	基于对象：封装，类
+		用类封装概念
+		The Big Three(构造，析构，复制）
+		
+
+	面向对象：封装，继承，多态
+		封装是继承的基础，继承是多态的基础
+		多态实现：
+			父类（指针，引用）声明，子类生成
+
+	SOLID原则：
+		SRP:单一职责原则
+			高内聚
+		OCP:开放封闭原则 
+			对修改封闭，对扩充开放
+		    类设计好不能再修改，可以继承
+		LSP:Liskov替代原则
+			怎么进行继承
+		ISP:接口分离原则
+	        	
+		DIP:依赖倒置原则
+			低耦合（好莱坞法则）
+
+	设计模式：
+		面向对象设计专家经验的总结
+		要素：
+			名称，问题，方案，约束（trade off)
+		原则：
+			封装变化,针对接口编程，优先选用组合
+		
+
+C/C++
+
+数据库
+
+
+UML
+
+三驾马车
+	版本控制
+	单元测试
+	自动化
+
+	版本控制：
+		
+		概念
+			仓库Repository
+				仓库里面放什么？
+				项目组织
+			工作区和操作文件
+				工作区：工作目录
+				签出check out
+				提交commit
+				更新update
+			版本与标记
+			分支
+			合并
+
+
+		一、CVS服务器端的安装与配置
+
+		1.安装CVS :sudo apt-get install cvs
+		2.安装CVSD:sudo apt-get installcvsd.安装cvsd后，会提示设置repository的位置，这个地方只要输入相对于RootJail的位置就可以。/cvsdir
+			RootJail在/etc/cvsd/cvsd.conf中进行设置，缺省的RootJail是/var/lib/cvsd。
+		3.创建版本库所在的目录：  #cd /var/lib/cvsd
+						#sudo mkdir cvsdir
+		4.初始化这个版本库/cvsdir
+				#sudo cvs -d /var/lib/cvsd/cvsdir init
+		5.设置cvsd的用户认证方式
+			# sudo chmod +w /var/lib/cvsd/cvsdir/CVSROOT/config
+			# sudo vi  /var/lib/cvsd/cvsdir/CVSROOT/config
+				去掉SystemAuth=no的注释
+				修改LockDir=/tmp/cvsdir
+		6.创建LockDir
+			#sudo mkdir /var/lib/cvsd/tmp/cvsdir
+		7.添加用户cvsuser
+			#sudo cvsd-passwd /var/lib/cvsd/cvsdir cvsuser, 提示输入密码是也输入cvsuser
+		8.设置目录权限。 #sudo chown cvsd:cvsd /var/lib/cvsd -R
+		9.重新启动cvsd。 #sudo /etc/init.d/cvsd restart 
+
+
+		二 测试
+			cvs -v
+			创建库：cvs -d ~/sandbox init
+
+			mkdir tmpdir
+			cd tmpdir
+			vi Color.txt
+				black
+				brown
+				red
+				orange
+				yellow
+				green
+			vi Number.txt
+				zero
+				one
+				two
+				three
+			
+单元测试&TDD
+	
+	clean code that works
+
+	TDD周期
+		1.写一个测试程序
+		2.让测试程序运行起来
+		3.编写产品代码
+	
+	学会用测试表达想法
+	
+	TDD：Fibonacci
+
+重构
+	版本控制和单元测试是基础
+	设计模式是目标
+
+
+
+Tools:
+
+1. ncurses:
+
+curses是字符终端下屏幕控制的基本库。可能很多新开发的程序都不使用了，不过如果要编译一些老程序，还经常遇得到。Ubuntu下执行命令 sudo apt-get install libncurses5-dev进行安装
+ ====================================================================
+
+ 
+系统编程概论
+
+
+怎样学习系统编程（利用Linux学习Linux编程）
+
+1 分析实用程序
+ /bin, /usr/bin, /usr/local/bin
+ 学习使用工具，分析工具，了解功能和原理
+2 学习系统调用
+ 函数和系统调用本质上都是函数。不同的库，不同的头文件
+ 分析需要哪些系统调用，学习系统调用的使用方法：参数？返回值？
+3 编程实现
+ 利用上面的原理和一组协同工作的系统调用，自己编程实现使用程序的功能
+ 或积极主动抄代码，学习那些系统调用是协同工作的
+ 
+ C语言的学习可以参考这个思路，实现标准库
+伴随我们学习经常要问的三个问题：
+ 能做什么？
+ 如何实现？
+ 自己如何编写？
+
+比如说Linux操作系统
+ 能做什么？
+  登录-运行程序-注销
+   如何登录？如何获取程序名？如何运行程序？
+  目录操作：目录树:ls,cd,pwd,mkdir,rmdir
+   目录树如何组织的？目录存在哪？什么是当前目录？
+  文件操作：cat, more/less/pg, cp, mv, lpr
+   文件数据如何存储？如何复制，移动，改名？文件名存在哪？
+  文件访问控制：ugo
+   如何设置？
+
+  从OS的角度看: 网络游戏
+   通信
+   协作
+   网络访问
+    bc/dc---->网络 B/S
+
+标准I/O 学习示例：more
+
+ 能做什么?用一下
+
+  使用方法
+   more filename
+   more < filename
+   command | more
+ 如何实现？
+  伪代码：
+  
+  如果用户没有输入文件名
+   输出键盘输入内容
+  对整个文件
+  显示24行
+  提示用户选择 空格 回车 q
+   如果用户选择空格
+    显示下24行
+   如果用户选择回车
+    显示下一行
+   如果用户选择 q
+    退出
+
+  函数调用：
+  fopen/fclose
+  stdin stdout stderr
+  fgets/fputs
+  getchar/putchar
+  printf("\033[7m more? \033[m")
+ 
+ 自己编写：
+         如何判断读到文件尾部了？
+    feof
+   fgets的返回值是0
+   fseek 与文件读写位置
+
+ 
+
+
+  
+ 问题： 
+  选择都要回车
+  文字和反白more一起上滚
+  百分比
+  适应窗口
+  重定向： who | more, ls |more
+   /dev/tty(流与文件)
+   
+
+
+
+系统调用：文件I/O  如何用Linux学习系统编程
+多用户系统如何知道谁在使用系统？who
+ who能做什么？使用一下
+  man who (info who; who --help)
+ 如何实现who？
+  
+  阅读ManPages
+   man man
+  搜索ManPages
+   man -k
+   man -k XXX | grep -i YYY
+  阅读头文件
+  参阅see also
+
+  man who
+  man -k utmp
+  man 5 utmp
+  utmp.h
+      grep -i XXX -nr /usr/include
+
+   UTMP_FILE
+   struct utmp
+                #define ut_name ut_user
+       ut_line           
+       #define ut_time ut_tv.tv_sec
+ 
+ 
+     伪代码：
+
+  打开utmp文件
+  针对文件
+   读取一条记录
+   显示记录
+  关闭文件
+
+
+  哪些系统调用？
+  man -k file | grep -i read
+        see also
+
+  open/read/close
+
+  struct utmp s;
+  read( fd, &s, sizeof(s));
+ 
+
+    man
+    cf fopen fread fclose
+
+ 自己编写who：
+          read: return value
+    /var/run/utmp
+    var/run/unp
+
+ 
+
+
+ 问题：空白记录
+   ut_type
+    时间转换
+   man -k time | grep -i transform (trans)
+    asctime(3)
+    ctime(3)
+    localtime(3)
+   man -k time | grep -i convert
+    无
+
+    查找关键字：至少汉语有想法
+      转换
+      
+    时间格式
+     man -k time | grep -i format
+    strftime(3)
+
+ 
+
+如何复制文件？cp
+ cp能干什么？
+  cp src dst
+
+ 如何实现cp?
+  open/close
+
+  open(fff, O_WRONLY|O_CREAT,0644)
+  creat(fff, 0644);
+  n = read(fd, buf, BUFSIZE);//#define BUFSIZE 4096
+  write(fd, buf, n);
+
+  伪代码：
+  打开源文件
+  创建目标文件
+  针对源文件
+   把源文件读入缓冲区
+   把缓冲区内容写入目标文件
+  关闭源文件和目标文件
+
+ 自己编写cp:
+
+ 
+
+ 
+
+系统调用错误处理：
+ 错误种类：errno
+ 显示错误消息：perror(3)
+ 错误处理封装函数
+  fork()
+
+  if((pid = fork()) < 0)
+   unix_error("fork error");
+  return pid;
+ 
+学有余力者：
+ ac last cat head tail od dd
+
+ 
+
+
+
+read/write可以读取文件内容，如何读取文件名和文件属性？ls
+
+ ls能干什么？
+  ls
+  ls -l
+  ls -a
+  ls -lu:最后访问时间
+  ls -s:以块为单位的文件大小
+  ls -t:按时间排序
+  ls -F：显示文件类型
+  
+  列出文件目录
+  显示文件信息
+   如何列出文件目录？
+   如何显示文件属性？
+   如何判断一个名字是文件还是目录？
+
+  文件树
+   文件和目录被组织成目录树(tree)，节点是目录或者文件
+   目录是一种特殊文件，文件内容就是目录和文件的名字，与utmp类似
+   与文件不同，目录不会为空
+
+ 如何实现ls?
+  man -k direct
+  man -k direct | grep -i read
+  man -k direct | grep -i entry
+   
+  readdir
+  see also: opendir closedir
+        总结：代码模式
+   fopen fread/fwrite fclose
+   open read/write close
+   opendir readdir closedir
+       
+  伪代码：
+  打开目录文件
+  针对目录文件
+   读取目录条目
+   显示文件名
+  关闭文件目录文件
+
+ 自己编写ls:
+
+ 
+
+ 
+
+  
+  传入参数，显示任意目录: ls /tmp; ls /; ls /dev
+  分栏
+  .开头隐含文件:-a
+  排序：man -k sort
+
+  
+  ls -l能做什么？
+  显示文件信息：模式（文件类型file(1)，访问控制），链接数，文件所有者，组，大小，最后修改时间，文件名
+
+ 如何实现ls -l?
+  man -k file | grep -i infomation (status, property, attribute)
+
+  stat(1) stat(2)
+  struct stat
+   最后修改时间：st_mtime   ctime
+   模式：st_mode
+    type ugs rwx rwx rwx
+
+    八进制掩码
+         struct stat info;
+                     if ((info.st_mode & 0170000) == 0040000)
+       printf("这是一个目录\n");
+
+      文件类型宏
+      #define S_ISDIR(m) (((m)&0170000)) == (0040000))
+
+         struct stat info;
+                     if (S_ISDIR(info.st_mode))
+       printf("这是一个目录\n");
+                    
+      访问控制属性？比如说本人能不能写？如何定义宏？    
+                     S_ISREG(mod)     '-'
+      S_ISDIR(mode)    'd'   
+         S_ISCHR(mode)    'c'   
+         S_ISBLK(mode))   'b'   
+
+
+   UID/GID
+    /etc/passwd
+     getpwuid(3)
+     struct passwd
+
+    /etc/group
+     getgrgid(3)
+     struct group
+ 自己编写ls -l: ls2.c
+   stat(2)         struct stat
+   getpwuid(3)     struct passwd
+   getgrgid(3)     struct group
+
+
+   记录计数
+   按文件名排序 qsort
+
+ 
+
+
+ 文件属性修改与open/creat
+  
+  open/creat umask(1) umask(2)
+
+  chmod(1) chmod(2)
+  chown(1) chgrp(1) chown(2)
+  touch(1) utime(2)
+  mv(1) rename(2)
+ 
+ 
+ 学有余力：tree chmod file chown chgrp finger touch
+
+
+tree ls-R
+文件包含数据，目录是文件列表，目录构成目录树。
+文件在目录中什么意思？
+用户的主目录（home）是什么意思？
+文件系统（解决的问题参考教材）
+路径：绝对路径，相对路径。pwd
+ 用户眼中的文件系统
+  目录和文件：构成目录树
+ 目录命令：
+  . .. /
+  mkdir
+  rmdir
+   -p
+  mv
+  cd
+  pwd
+  ...
+  练习：构建一棵目录树
+ 文件命令：
+  cp
+   -r
+  cat
+  mv
+  rm
+   -r
+  ln
+  ls
+  ...
+ 目录树命令
+  tree
+  ls -R
+  chmod -R
+  du
+  find:注意与grep的区别
+  ...
+ 
+  目录树的深度？？
+ 
+ 思考：
+ 文件系统形成目录树，操作系统提供相应的操作命令来协同工作
+ 目录是什么？
+ 如何知道文件所处的目录？
+ 切换目录（cd）是什么意思？ 
+ pwd如何自知道你处的目录？
+
+文件系统结构VFS
+ 硬盘的抽象
+  第一层抽象：从磁盘到分区
+   分区可以看作磁盘
+   两个512G的硬盘跟一个1T的硬盘分成两个区
+  第二层抽象：从磁盘到块序列
+   块数组与字节数组
+  第三层抽象：块数组到三个区域的划分（超级块，i-node, 数据区）
+   目录，文件属性，文件内容
+
+   超级块：文件系统信息
+   i-node: 文件属性
+     每个文件都有一个i-node
+     i-node有固定的大小，构成一个i-node表
+   数据区：文件内容和目录数据
+     目录数据是(文件名，i-node)列表
+ 文件系统的实现
+  新建文件：who > userlist
+   存储属性
+   存储数据
+   记录分配情况
+   添加文件名到目录
+  目录工作过程：
+   ls  -lia
+  . ..:目录链接,/
+   ln 文件链接
+             目录：   struct dirent(filename, i-node)
+             readdir
+       x,22222
+       xln,22222
+     i-node:  struct stat
+               文件属性
+      块分配表(235, 214, 288)
+     文件内容：块
+               open read/write
+
+      ln:
+     a/x  i-node
+     d1/xln i-node
+         
+     
+
+  读文件过程：cat
+   目录中寻找文件名
+   定位i-node
+   访问数据块
+  i-node与大文件:间接索引
+   14个磁盘分配列表
+ 理解目录：
+  目录结构：
+   用户:文件名列表
+   系统：命名的指针列表（双向链表）
+    struct dirent
+   文件在目录中：
+   目录包含子目录：
+   目录有一个父目录：
+   多重链接及链接数
+   文件名：没有文件名只有链接名
+  目录相关命令和系统调用
+   mkdir(1) mkdir(2)
+   rmdir(1) rmdir(2)
+   rm(1) unlink(2)
+   ln(1) link(2)
+   mv(1) rename(2)
+   cd(1) chdir(2)
+   ...
+ 编写pwd
+  pwd能做什么?
+  如何实现pwd?
+   递归函数：规模不同，形式相同
+    终止条件
+    递归公式
+   伪代码：
+   pwd
+    得到.的i-node
+    得到..的i-node
+    如果.和..的i-node不同
+     转到父节点（chdir)
+     显示父目录的pwd
+     显示/，加上.对应的目录名（链接名）
+     （opendir, readdir, closedir)
+     
+    否则
+     结束，父目录是/
+    
+    
+  自己编写pwd
+  
+   不用递归使用循环也可以，能力强者可以两者都实现一下。
+
+
+   问题：
+    why not man?
+     man -k direct | grep current
+
+
+  其他：
+   多树森林：mount
+   符号链接：ln -s
+    ln(1) symlink(2)
+  学有余力：
+   find, du,  ls -R, mount, dump
+
+
+
+链接控制：stty
+ 文件 ：磁盘文件和设备的抽象
+
+ stty:显示，设置终端属性
+ 设备和文件
+  文件：数据，属性，目录中的名字
+  设备：文件名，i-node，文件所有者，权限，修改时间
+
+  设备:
+   ls -C /dev | head
+  设备和系统调用
+   int fd;
+   fd = open("/dev/tape", O_RDONLY);
+   lseek(fd, (long)4096, SEEK_SET);
+   n = read(fd, buf, buflen);
+   close(fd);
+
+  终端设备就像文件
+   终端：键盘和显示单元。功能接收用户输入，并将输出信息显示给用户。
+    广义：串口，打印机，调制解调器，telnet窗口，ssh窗口等
+
+   tty(1)
+   
+   cp /etc/motd /dev/pts/2
+
+   who > /dev/pts/2
+
+   ls -li /dev/pts/2
+
+  设备文件的属性
+   设备文件和文件大小
+    主设备号和从设备号
+   设备文件和权限
+    读获取数据
+    写发送数据
+  
+  write(1)
+   实现：文件名是设备名
+
+
+  设备文件和i-node
+   目录不能区分磁盘文件和设备文件
+   磁盘文件和设备文件的区分在i-node
+    设备文件的i-node包含指向内核子程序表的指针，主设备号指向设备驱动程序
+
+  设备与文件的不同
+   文件：内核缓冲
+   设备属性：波特率，奇偶校验位，暂停位等
+   链接属性和控制
+    有哪些属性？
+    如何检测？
+    如何设置？
+
+  磁盘链接的属性
+   属性修改模式
+    获取设置
+    修改设置
+    存储设置
+     #include <fcntl.h>
+
+     int s;
+
+     s = fcntl(fd, F_GETFL);
+
+     s |= O_SYNC;
+
+     result = fcntl(fd, F_SETFL, s)
+     if( result == 1)
+      perror("setting SYNC");
+    
+
+   属性1：缓冲
+   属性2：自动添加模式
+    wtmp
+
+    fcntrl 添加O_APPEND
+
+    write(fd, buf, size) 使得lseek和write成为一个原子操作
+
+    popen pwrite
+
+   open控制文件描述符号
+    fd = open (WTMP_FILE, O_WRONLY | O_APPEND | O_SYNC);
+
+    O_CREAT
+    O_TRUNC
+    O_EXEL
+
+    O_CREAT | O_EXEL:多进程同时创建文件
+ 
+ 终端连接的属性
+  终端I/O: getchar/putchar
+
+   #inlcude <stdio.h>
+
+   int main()
+   {
+    int c, n=0;
+
+    while( (c=getchar()) != 'q')
+     printf("char %3d is %c cod %d \n", n++, c , c);
+   }
+
+   ./listchars
+    hello
+
+ 
+
+ 
+
+   在用户输入回车后才接收数据（行缓冲）
+   Return（ascii 13) 看作换行符（ascii 10）
+   进程发换行符，终端接受回车换行符
+   
+
+  终端驱动程序
+   处理进程和外部设备间数据流的内核子程序的集合称为终端驱动程序或者tty驱动程序
+
+  与终端驱动交互：stty
+   
+  stty 能干什么？
+   stty -a
+  如何实现stty ？
+   tty驱动：man stty
+    输入
+    输出
+    本地
+    控制
+    本地
+
+   编写终端驱动
+    man -k terminal | grep -i attribute
+    
+    tcgetattr(3)/tcsetattr(3)
+    struct termios
+
+                几个例子
+    显示echo状态
+    改变echo状态
+
+
+  自己编写stty:
+   修改more, 不用按回车
+
+ 
+
+  其他：
+   ioctl
+   示例：获取终端屏幕大小
+
+	信号处理1：signal
+		signal(SIGALARM, SIG_DFL)
+		signal(SIGALARM, SIG_IGN)
+		signal(SIGALARM, handler)
+			老鼠夹问题：信号被捕获，信号处理函数就失效了，再次设置就有可能丢失信号，信号的不可靠性
+			sinal(SIGINT , inthandler);
+            void inthandler(int signum){
+				signal(SIGINT, inthandler);
+			}
+
+	 
+			不知道信号被发送的原因
+			处理函数无法阻塞其他信号
+
+		如何处理多信号：
+
+			生活中的示例
+			
+			进程的多信号处理:sigdemo3.c
+				处理函数每次使用完都会被禁用吗？
+				如果SigY在进程处理SigX时到达，会发生什么？
+				如果进程处理SigX时又有SigX到达，会发生什么？
+				如果信号到达时，进程被getchar,read之类输入阻塞，会发生什么？
+
+
+			^C^C^C^C
+			^\^C^\^C
+			hello^C CR
+			hello CR^C
+			^\^\hello^C
+
+				处理函数每次使用完都会被禁用吗？
+					Linux上不会禁止，不存在老鼠夹问题
+					如果两次^C杀死进程，说明不可靠
+				如果SigY在进程处理SigX时到达，会发生什么？
+					先处理Y再处理X
+				如果进程处理SigX时又有SigX到达，会发生什么？
+					递归调用同一个信号处理函数
+					忽略后者：Linux
+					阻塞第二个
+				如果信号到达时，进程被getchar,read之类输入阻塞，会发生什么？
+
+	信号处理2：sigaction(2)
+		   struct sigaction {
+		       void     (*sa_handler)(int);
+			   void     (*sa_sigaction)(int, siginfo_t *, void *);
+			   sigset_t   sa_mask;
+			   int        sa_flags;
+			   void     (*sa_restorer)(void);
+	       };
+           
+		   在一些情况下，一个操作不应该被其他操作打断
+
+		   sa_mask:阻塞其他信号
+		   		sigprocmask(2)
+				构造信号集合
+					sigemptyset(3)
+					sigfillset(3)
+					sigaddset(3)
+					sigdelset(3)
+				    sigismember(3)
+		   sa_flags
+		   	  小练习：暂时阻塞SIGINT SIGQUIT
+			  注意退出要恢复原来的系统状态
+
+
+
+			  sigset_t sigs, presigs;
+			  sigemptyset( &sigs );
+			  sigaddset( &sigs, SIGINT );
+			  sigaddset( &sigs, SIGQUIT );
+			  sigprocmask( SIG_BLOCK, &sigs, &presigs );
+			  //...
+			  sigprocmask( SIT_SET, *presigs, NULL );
+			  
+			  
+			  
+			  sigactiondemo.c
+
+		阻塞信号和忽略信号的区别：
+			忽略信号：信号还会被传递，只是不处理
+			阻塞信号：解除阻塞前，信号不传递
+
+
+
+
+	
+进程：运行的程序
+ 概论参考教材
+
+ 通过ps学习进程
+  进程存在于用户空间
+  
+  ps
+  ps -e:所有的，包含其他终端
+  ps -le:
+   进程状态：R运行态，S睡眠态
+  p -fe: uid->用户名，完整命令行
+
+  ps -ex | head: 系统进程
+ 
+ 进程管理和文件管理
+  内存中的进程类似磁盘上的文件
+  内存字节数组，磁盘块数组
+  用户空间-进程
+
+ 
+ shell:进程控制和程序控制工具
+  运行程序
+  管理输入输出
+  可编程
+ 
+  shell如何运行程序
+   while(!end of input)
+    get command
+    execute command
+    wait for command to finish
+
+   ls ps序列
+  编写shell
+   如何运行一个程序
+   如何建立一个新进程
+   等待新进程退出（exit)
+
+  程序启动方式：
+   鼠标
+   命令
+   批处理
+   程序启动程序
+   纯硬件启动
+   自启动
+
+  如何从一个程序启动另一个程序？
+   execvp(3):执行成功无返回值，少见
+    将指定程序复制到调用它的进程
+    将指定字符串数组作为argv[],传给这个程序
+    运行这个程序
+
+   exec.c
+    exec换脑大法
+
+   exec家族：
+    execve(2)
+
+   编写shell，让用户输入程序名和参数，然后运行
+    将命令行读入缓冲区
+    将缓冲分割为参数列表
+    将参数列表传给execvp
+
+
+    psh1.c :
+     运行一次命令，就得运行一次shell
+
+  如何建立一个新进程:fork(2)
+   forkdemo1.c: 一次调用，两次返回
+   forkdemo2.c
+   进程图
+   
+
+   fork过程
+    分配新的内存块和内核数据结构
+    复制原来的进程到新的进程
+    向运行进程集添加新的进程
+    将控制返回给两个进程
+
+   forkdemo3.c:如何区分父子进程
+
+   总结：
+   一次调用两次返回
+   返回值区分父子
+   新进程使用exec执行程序
+
+   vfork
+
+
+  父进程如何等待子进程退出：wait(2)
+       暂停调用它的进程，直到子进程结束（通知）
+    wait取得子进程结束时的exit值（通信）
+
+ 
+
+   通知：waitdemo1.c
+    wait阻塞调用它的进程直到子进程结束
+    wait返回结束进程的pid
+   通信：waitdemo2.c
+    高8位exit
+  编程实现shell:
+   伪代码
+    
+    父进程等待用户输入命令
+    父进程产生子进程(fork)
+     子进程执行命令中的程序并退出（exit)
+     父进程等待子进程结束（wait)
+    父进程等待用户输入下一条命令
+  
+
+
+   问题：一行输入所有参数
+      屏蔽^C,^D退出
+      不识别exit
+
+  用进程编程
+   函数：call/return
+   进程：exec/exit
+
+  进程死亡：
+   exit---fork
+   关闭fd 和 目录描述符
+   父pid置为init
+   父用wait，通知父进程
+   向父进程发SIGCHLD信号
+
+ 
+
+可编程的shell
+ shell编程
+ shell脚本
+  命令
+  变量
+  用户输入
+  控制
+  环境
+ smsh1:命令行解析
+  
+
+
+
+ 
+
+链接和协议-编写Web服务器
+ 服务器的设计重点
+  服务器的设计问题：DIY 或 代理
+   迭代服务器
+    DIY：服务器接受请求，自己处理工作，用于快速简单的任务
+   并发服务器
+    代理：服务器接收请求，然后创建新进程处理任务，用于慢速，复杂的任务
+    fork..exec..wait
+
+  使用fork的时间服务器
+   int pid = fork();
+   switch(pid){
+    case -1:
+     return;
+    case 0:
+     close(listenfd);
+     dup2(connfd, 1);
+     close(connfd);
+     execl("/bin/date", "date", NULL);
+     oops("execl");
+    default:
+     close(connfd);
+     wait(NULL）；//parent
+    
+    fork的socket pair 图
+
+
+  需要处理僵尸（zombie)进程
+     signal(SIGCHLD， child_waiter);
+
+     void child_waiter(int signum)
+     {
+      wait(NULL);
+     }
+
+
+     void child_waiter(int signum)
+     {
+      while (waitpid(-1, NULL, WNOHANG)>0)
+       /*do nothing*/;
+     }
+
+ 编写Web服务器
+  目录服务器的扩展：ls, cat服务器，exec服务器
+
+  Web服务器的三种操作
+   列举目录信息
+   cat文件
+   运行程序
+
+  流程
+   客户端                                服务器
+   用户选择一个链接
+   连接服务器                            接受请求
+   写请求                                读取请求
+              处理请求：
+               目录：显示目录列表
+             文件：显示文件内容
+             .cgi文件：运行
+             不存在:错误消息
+              写响应
+      读取响应
+   挂断
+   显示响应
+    html:解析
+    image:绘图
+    sound:播放
+   重复
+  
+  web服务器协议：HTTP
+   客户端请求
+    GET filename HTTP/version
+    可选参数
+    空行
+
+   
+    HTTP/version status-code status-message
+    附加信息
+    空行
+    内容
+
+  编写Web服务器：
+   建立web服务器：socklib.c中的make_server_socket
+   接收请求：accept得到connfd,可以使用fdopen把connfd转换成缓冲流
+   读取请求：HTTP，read
+   处理请求：
+    ls,cat,exec,opendir,readdir,open/read,dup2,stat
+   发送应答：HTTP,write
+
+   只支持GET，跳过其余参数
+    目录名：ls
+    文件名：cat
+    不存在：404
+    cgi：exec
+
+#define APPLY_HEAD "HTTP/1.1 200 OK\r\nContent-Type: "
+#define APPLY_END "\r\n\r\n"
+#define HTML_TYPE "text/html"
+#define TEXT_TYPE "text/plain"
+#define JPG_TYPE "image/jpg"
+#define GIF_TYPE "image/gif"
+#define ERR_HEAD "HTTP/1.1 404 Not Found\r\nContent-Type: "
+#define ERR_PAGE "<html><body>Not Found</body></html>"
+
+
+ 
+
+
+ mmap
+
+
