@@ -458,8 +458,9 @@ $ gem update --system 1.8.24
 
 vim ~/.gemrc
   
-  install: --no-rdoc --no-ri
-  update: --no-rdoc --no-ri
+     install: --no-rdoc --no-ri
+
+     update: --no-rdoc --no-ri
 
 $ gem install rails -v 3.2.12
 
