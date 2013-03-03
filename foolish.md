@@ -438,3 +438,45 @@ http://www.wikipedia.org/
 
 http://news.ycombinator.com/news
 
+# Ruby on Rails Tutorial second edition
+
+## set up development environment
+
+### install Ruby, RubyGems, Rails, Git 
+
+$ rvm get head && rvm reload  # update and reload RVM
+
+$ rvm install 1.9.3
+
+$ rvm use 1.9.3@railstutorial2ndEd --create --default
+
+$ rvm --help
+
+$ rvm gemset --help
+
+$ gem update --system 1.8.24
+
+vim ~/.gemrc
+  
+  install: --no-rdoc --no-ri
+  update: --no-rdoc --no-ri
+
+$ gem install rails -v 3.2.12
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
