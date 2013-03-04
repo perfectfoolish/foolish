@@ -463,7 +463,19 @@ vim ~/.gemrc
      update: --no-rdoc --no-ri
 
 $ gem install rails -v 3.2.12
+`lifulei@cow:~/Books/first_app$ bundle install
+Fetching gem metadata from https://rubygems.org/...........
+Fetching gem metadata from https://rubygems.org/..
+Bundler could not find compatible versions for gem "activesupport":
+  In snapshot (Gemfile.lock):
+    activesupport (3.2.8)
 
+  In Gemfile:
+    rails (= 3.2.12) ruby depends on
+      activesupport (= 3.2.12) ruby
+
+Running `bundle update` will rebuild your snapshot from scratch, using only
+the gems in your Gemfile, which may resolve the conflict.`
 
 
 
